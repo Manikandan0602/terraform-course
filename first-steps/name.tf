@@ -4,11 +4,7 @@ provider "aws" {
   region     = "us-east-1"
 }
 
-resource "aws_instance" "my-machine" {
-  count         = 2
-  ami           = "ami-0d729a60"
+resource "aws_instance" "terraform-machine" {
+  ami           = "ami-0b5eea76982371e91"
   instance_type = "t2.micro"
-  tags          = {
-        Name    = "my-machine-${count.index}"
-    }
 }
